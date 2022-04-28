@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.service import Service
 
 # Defining the Channel URL
 try:
-    print(Fore.MAGENTA + "Please enter your Channel-URL now:")
+    print("Please enter your Channel-URL now:")
     c = Channel(input())
 except:
     print("That is not a valid Channel URL")
