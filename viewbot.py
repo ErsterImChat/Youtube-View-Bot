@@ -7,6 +7,11 @@ from selenium.webdriver.common.by import By
 from colorama import *
 from selenium.webdriver.chrome.service import Service
 
+print("This is a simple Youtube View Bot.\nIt uses Selenium and Python.\nI do not take any Warranty for actions done with this script.\nIf you are being asked to write something, and the Script crashes, make sure that your Answers are EXACTLY how they should.\nUpper/Lowercase DOES matter.")
+
+
+
+
 
 # Defining the Channel URL
 try:
