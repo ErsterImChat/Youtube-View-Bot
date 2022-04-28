@@ -10,24 +10,29 @@ from selenium.webdriver.chrome.service import Service
 
 # Defining the Channel URL
 try:
-    c = Channel(input(Fore.MAGENTA + "Please enter your Channel-URL now: "))
+    print(Fore.MAGENTA + "Please enter your Channel-URL now:")
+    c = Channel(input())
 except:
     print("That is not a valid Channel URL")
     quit()
 
 
 # Asking if all Videos from the Channel should be player
-all_videos = input(Fore.MAGENTA + "Do you want to watch all Videos from this Channel? (yes/no): ")
+print("Do you want to watch all Videos from this Channel? (yes/no): ")
+all_videos = input()
 
 match all_videos:
     case "no":
-        video_amount = input("How many Videos do you want to watch?: ")
+        print("How many Videos do you want to watch?: ")
+        video_amount = input()
 
 # Asking if the Videos should be played till the end
-watch_till_end = input(Fore.MAGENTA + "Do you want to watch the Videos till the End? (yes/no): ")
+print("Do you want to watch the Videos till the End? (yes/no): ")
+watch_till_end = input()
 match watch_till_end:
     case "no":
-        watch_duration = input(Fore.MAGENTA + "How long do you want to watch the Videos (seconds): ")
+        print("How long do you want to watch the Videos (seconds): ")
+        watch_duration = input()
 
 # Making Chrome Headless and intitializing a Selenium Webdriver to view the Videos
 # also disabling logging of the Webdriver Manager and initializing colorama
@@ -37,7 +42,8 @@ init()
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-logging")
-#options.add_argument('--headless')
+options.add_argument('--headless')
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 
 ChromeDriverManager(log_level=0)
